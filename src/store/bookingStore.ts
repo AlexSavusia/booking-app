@@ -9,7 +9,7 @@ export interface Slot {
 
 interface BookingState {
   slots: Slot[];
-  bookedSlots: Slot[]; // Добавлено состояние для хранения забронированных слотов
+  bookedSlots: Slot[];
 }
 
 export const useBookingStore = defineStore("bookingStore", {
@@ -19,7 +19,7 @@ export const useBookingStore = defineStore("bookingStore", {
       { id: 2, time: "11:00 - 12:00", reserved: false },
       { id: 3, time: "12:00 - 13:00", reserved: false },
     ],
-    bookedSlots: [], // Изначально массив пустой
+    bookedSlots: [],
   }),
   actions: {
     confirmBooking(slotId: number, userName: string) {
@@ -27,7 +27,7 @@ export const useBookingStore = defineStore("bookingStore", {
       if (slot && !slot.reserved) {
         slot.reserved = true;
         slot.userName = userName;
-        this.bookedSlots.push(slot); // Добавляем слот в массив забронированных
+        this.bookedSlots.push(slot);
       }
     },
   },

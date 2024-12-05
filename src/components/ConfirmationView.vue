@@ -25,7 +25,7 @@ import { storeToRefs } from "pinia";
 export default defineComponent({
   setup() {
     const store = useBookingStore();
-    const { bookedSlots } = storeToRefs(store); // Реактивно подключаем массив
+    const { bookedSlots } = storeToRefs(store);
 
     return {
       bookedSlots,
